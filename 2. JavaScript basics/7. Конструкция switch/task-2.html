@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Переписать if-ы в switch</title>
+</head>
+<body>
+	<script>
+		var a = +prompt("a?", "");
+
+		switch (a) {
+			case 0:
+				console.log(0);
+				break;
+			
+			case 1:
+				console.log(1);
+				break;
+			
+			case 2:
+			case 3:
+				console.log("2,3");
+				break;
+			
+			default:
+				console.log("default");
+				break;
+		}
+	</script>
+</body>
+</html>

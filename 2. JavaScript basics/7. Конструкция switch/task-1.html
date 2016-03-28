@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Переписать из switch в if</title>
+</head>
+<body>
+	<script>
+	var browser = prompt("Укажите свой браузер", "Например: Chrome");
+
+	if (browser === "IE") {
+		console.log("О, да у вас IE!");
+	} else if (browser === "Chrome" || browser === "Firefox" || browser === "Safari" || browser === "Opera") {
+		console.log("Да, и эти браузеры мы тоже поддерживаем!");
+	} else {
+		console.log("Мы надеемся, что и в вашем браузере все ок!");
+	}
+	</script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function Human(name, age) {
+			this.currentPlanet = "Earth";
+			this.name = name;
+			this.age = age;
+		}
+
+		Human.prototype.greetings = function() {
+			console.log("Hello, I come from " + this.currentPlanet + ".");
+			console.log("My name is " + this.name + ".");
+			console.log("I'm human of " + this.gender + " gender.");
+			console.log("I'm " + this.age + " years old.");
+		}
+
+		function Male(name, age) {
+			this.gender = "male";
+			Human.apply(this,arguments);
+		}
+
+		function Female(name, age) {
+			this.gender = "female";
+			Human.apply(this,arguments);
+		}
+		// Chain
+			// Previous Alexey code
+			// Male.prototype = new Human();
+			// Female.prototype = new Human();
+		Male.prototype = Object.create(Human.prototype);
+		Female.prototype = Object.create(Human.prototype);
+		// Object alex
+		var alex = new Male("Alexey", 24);
+		// Object jess
+		var jess = new Female("Jessica", 22);
+		jess.hot = function() {
+			console.log("I'm so hot! <3");
+		}
+
+		alex.greetings();
+		console.log("");
+		jess.greetings();
+		jess.hot();
+	</script>
+	<script>
+		// var array = [1,[1,2,3,[1,2,3,4],1,[1,2,3]],1,55,24,[[123],[12,23,34,45]],[[[[[999,888,[777]]]]]]];
+		// console.log("Raw array");
+		// console.log(array);
+		// var simple=[]
+		// function complex_to_simple(data){
+		//     for(i in data){
+		//         if(data[i].length){
+		//             complex_to_simple(data[i]);
+		//         }
+		//         else{
+		//             simple.push(data[i]);
+		//         }
+		//     }
+		// }
+		// complex_to_simple(array);
+		// console.log("Clean array");
+		// console.log(simple);
+	</script>
+</body>
+</html>

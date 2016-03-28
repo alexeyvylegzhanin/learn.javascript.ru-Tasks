@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Вывод простых чисел</title>
+</head>
+<body>
+  <script>
+	  var start = +prompt("start = ","");
+	  var end = +prompt("end = ", "");
+
+	  outer: for (var i = start; i <= end; i++) {
+	  	for (var j = 2; j < i; j++) {
+	  		if (i%j) {
+	  			continue;
+	  		} else {
+	  			continue outer;
+	  		}
+	  	}
+	  	console.log(i);
+	  }
+  </script>
+</body>
+</html>
