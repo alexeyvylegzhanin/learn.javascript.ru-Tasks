@@ -1,1 +1,1 @@
-"# Tasks from http://learn.javascript.ru" 
+# Tasks from http://learn.javascript.ru
