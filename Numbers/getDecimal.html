@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Function getDecimal()</title>
+  <!-- Mocha, Chai and Sinon libs -->
+  <script src="../Quality-of-code/unit-tests-libs/libs.js"></script>
+  <!-- Unit tests -->
+  <script src="tests.js"></script>
+</head>
+<body>
+  <!-- Function that return decimal part of number -->
+  <script>
+    function getDecimal(num) {
+      return +(num - parseInt(num)).toFixed(10);
+    }
+
+    // Solution via strings
+    function getDecimal2(num) {
+      var string = "" + num;
+      return "0" + string.slice(string.indexOf("."), string.length);
+    }
+  </script>
+</body>
+</html>
