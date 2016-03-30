@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Task-1,2. Function pow</title>
+  <!-- Mocha, Chai and Sinon libs -->
+  <script src="unit-tests-libs/libs.js"></script>
+  <!-- Our test -->
+  <script src="unit-tests.js"></script>
+</head>
+<body>
+
+  <!-- Task-1,2 function pow(x, n) -->
+  <script>
+    function pow(x, n) {
+      var result = 1;
+
+      if (n < 0 || n - parseInt(n) || x === 0 && n === 0) {
+
+        result = NaN;
+
+      } else {
+
+        for (var i = 0; i < n; i++) {
+          result *= x;
+        }
+
+      }
+
+      return result;
+    }
+  </script>
+
+</body>
+</html>
