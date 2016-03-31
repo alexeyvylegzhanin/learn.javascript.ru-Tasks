@@ -28,8 +28,10 @@
     }
 
     // getFibNum2() realization with Binet's formula
-    function getFibNum2(numIndex) {
-      // code here, later...
+    function getFibNumBinet(numIndex) {
+      var GOLDEN_RATIO = (1 + Math.sqrt(5)) / 2;
+
+      return Math.round(Math.pow(GOLDEN_RATIO, numIndex) / Math.sqrt(5));
     }
 
   </script>

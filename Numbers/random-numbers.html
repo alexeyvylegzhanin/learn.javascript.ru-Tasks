@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+    // Напишите код для генерации случайного значения в диапазоне от 0 до max, не включая max.
+    function getRandom1(maxBorderValue) {
+      return Math.random() * maxBorderValue;
+    }
+    // Напишите код для генерации случайного числа от min до max, не включая max.
+    function getRandom2(minBorderValue, maxBorderValue) {
+      return Math.random() * (maxBorderValue - minBorderValue) + minBorderValue;
+    }
+    // Напишите функцию randomInteger(min, max) для генерации случайного целого числа между min и max, включая min,max как возможные значения.
+    // Любое число из интервала min..max должно иметь одинаковую вероятность.
+    // Правильный способ: Math.round(случайное от min-0.5 до max+0.5)
+    function getRandomInt(minBorderValue, maxBorderValue) {
+      return Math.floor(Math.random() * (maxBorderValue + 1 - minBorderValue) + minBorderValue);
+    }
+
+    for (var i = 0; i < 10; i++) {
+      console.log(getRandomInt(0, 10));
+    }
+  </script>
+</body>
+</html>
