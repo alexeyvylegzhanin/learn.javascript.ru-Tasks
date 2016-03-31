@@ -1,4 +1,4 @@
-// Describe getDecimal() function
+// Describe function getDecimal()
 describe("Function getDecimal()", function() {
 
   it("If number = 12.345. Decimal part is: 0.345", function() {
@@ -15,7 +15,7 @@ describe("Function getDecimal()", function() {
 
 });
 
-// Describe getDecimal2() function
+// Describe function getDecimal2()
 // that use solution with strings
 describe("Function getDecimal2() with Strings", function() {
 

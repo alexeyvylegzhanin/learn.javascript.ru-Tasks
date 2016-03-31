@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fibonacci numbers</title>
+  <!-- Mocha, Chai and Sinon libs -->
+  <script src="../Libs/chai-mocha-sinon.js"></script>
+  <!-- Unit tests -->
+  <script src="../Unit-tests/Numbers/ut-fibonacci-numbers.js"></script>
+</head>
+<body>
+  <script>
+    // getFibNum() first realization
+    function getFibNum(numIndex) {
+      var a = 1, b = 1;
+      var c = 0;
+
+      if (numIndex === 0) c = 0;
+      if (numIndex === 1 || numIndex === 2) c = 1;
+
+      for (var i = 2; i < numIndex; i++) {
+        c = a + b;
+        a = b;
+        b = c;
+      }
+
+      return c;
+    }
+
+    // getFibNum2() realization with Binet's formula
+    function getFibNum2(numIndex) {
+      // code here, later...
+    }
+
+  </script>
+</body>
+</html>
