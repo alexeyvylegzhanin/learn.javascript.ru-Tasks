@@ -4,4 +4,5 @@ describe("hello", function() {
   it("world", function() {
     assert.equal(ucFirst("hello"), "Hello");
   });
+  
 });

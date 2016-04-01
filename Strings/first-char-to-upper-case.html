@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
+  <title>First char to upper case</title>
   <!-- Mocha, Chai and Sinon libs -->
   <script src="../Libs/chai-mocha-sinon.js"></script>
   <!-- Our test -->
@@ -15,10 +15,11 @@
     // ucFirst("вася") == "Вася";
     // ucFirst("") == ""; // нет ошибок при пустой строке
     function ucFirst(incomingString) {
-      incomingString = incomingString.toLowerCase();
-      incomingString[0] = incomingString[0].toUpperCase();
-
-      return incomingString;
+      // need to code situations with negative scenarios:
+      //  1. Numbers;
+      //  2. Empty strings;
+      // need to describe unit tests
+      return incomingString[0].toUpperCase() + (incomingString.slice(1, incomingString.length)).toLowerCase();
     }
   </script>
 </body>
