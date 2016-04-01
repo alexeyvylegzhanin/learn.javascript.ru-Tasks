@@ -2,16 +2,41 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Check spam</title>
+  <title>First char to upper case</title>
+  <!-- Mocha, Chai and Sinon libs -->
+  <script src="../Libs/chai-mocha-sinon.js"></script>
+  <!-- Our test -->
+  <script src="../Unit-tests/Strings/ut-check-spam.js"></script>
 </head>
 <body>
   <script>
     // Напишите функцию checkSpam(str), которая возвращает true,
     // если строка str содержит „viagra“ или „XXX“, а иначе false.
     // Функция должна быть нечувствительна к регистру:
+    //
     // checkSpam('buy ViAgRA now') == true
     // checkSpam('free xxxxx') == true
     // checkSpam("innocent rabbit") == false
+    function checkSpan(incomingString) {
+      var string = String(incomingString).toLowerCase();
+      // empty string fix
+      if(string == "") return false;
+
+      for (var i = 0; i < string.length; i++) {
+        if(~string.toLowerCase().indexOf("viagra") || ~string.toLowerCase().indexOf("xxx")) {
+
+          return true;
+          break;
+
+        } else {
+
+          return false;
+
+        }
+
+      }
+      //return incomingString.toLowerCase().indexOf(searchKey1 || searchKey2);
+    }
   </script>
 </body>
 </html>

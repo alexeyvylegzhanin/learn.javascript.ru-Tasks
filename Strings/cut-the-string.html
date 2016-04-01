@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cut the string</title>
+  <!-- Mocha, Chai and Sinon libs -->
+  <script src="../Libs/chai-mocha-sinon.js"></script>
+  <!-- Our test -->
+  <script src="../Unit-tests/Strings/ut-cut-the-string.js"></script>
+</head>
+<body>
+  <script>
+    // Создайте функцию truncate(str, maxlength), которая проверяет длину строки str,
+    // и если она превосходит maxlength – заменяет конец str на "...",
+    // так чтобы ее длина стала равна maxlength.
+    //
+    // Результатом функции должна быть (при необходимости) усечённая строка.
+    //
+    // Например:
+    //
+    // truncate("Вот, что мне хотелось бы сказать на эту тему:", 20) = "Вот, что мне хоте..."
+    //
+    // truncate("Всем привет!", 20) = "Всем привет!"
+    function truncate(incomingString, maxLength) {
+      var completeString = "";
+
+      if (incomingString.length > maxLength) {
+
+        completeString = incomingString.slice(0, maxLength - 3) + "...";
+
+      } else {
+
+        completeString = incomingString;
+
+      }
+
+      return completeString;
+    }
+
+  </script>
+</body>
+</html>

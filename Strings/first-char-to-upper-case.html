@@ -15,10 +15,8 @@
     // ucFirst("вася") == "Вася";
     // ucFirst("") == ""; // нет ошибок при пустой строке
     function ucFirst(incomingString) {
-      // need to code situations with negative scenarios:
-      //  1. Numbers;
-      //  2. Empty strings;
-      // need to describe unit tests
+      if ( +incomingString == false || typeof incomingString == "number") return "";
+
       return incomingString[0].toUpperCase() + (incomingString.slice(1, incomingString.length)).toLowerCase();
     }
   </script>
