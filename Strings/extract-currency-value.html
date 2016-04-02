@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Extract currency value</title>
+  <!-- Mocha, Chai and Sinon libs -->
+  <script src="../Libs/chai-mocha-sinon.js"></script>
+  <!-- Our test -->
+  <script src="../Unit-tests/Strings/ut-extract-currency-value.js"></script>
+</head>
+<body>
+  <script>
+    // Есть стоимость в виде строки: "$120".
+    // То есть, первым идёт знак валюты, а затем – число.
+    //
+    // Создайте функцию extractCurrencyValue(str),
+    // которая будет из такой строки выделять число-значение, в данном случае 120.
+    // function extractCurrencyValue(incomingString) {
+    //
+    // }
+    function extractCurrencyValue(amoutString) {
+      // another solution
+      // return +str.slice(1);
+      var completeString = "";
+
+      for (var i = 0; i < amoutString.length; i++) {
+
+        if (isNaN(amoutString[i])) {
+          continue;
+        } else {
+          completeString = amoutString.slice(i, amoutString.length);
+          break;
+        }
+
+      }
+
+      return parseFloat(completeString);
+
+    }
+  </script>
+</body>
+</html>

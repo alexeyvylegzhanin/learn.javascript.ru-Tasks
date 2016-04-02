@@ -22,19 +22,13 @@
     //
     // truncate("Всем привет!", 20) = "Всем привет!"
     function truncate(incomingString, maxLength) {
-      var completeString = "";
 
       if (incomingString.length > maxLength) {
-
-        completeString = incomingString.slice(0, maxLength - 3) + "...";
-
+        return incomingString.slice(0, maxLength - 3) + "...";
       } else {
-
-        completeString = incomingString;
-
+        reuturn incomingString;
       }
 
-      return completeString;
     }
 
   </script>

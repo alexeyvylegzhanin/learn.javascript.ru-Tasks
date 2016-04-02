@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>First char to upper case</title>
+  <title>Check spam</title>
   <!-- Mocha, Chai and Sinon libs -->
   <script src="../Libs/chai-mocha-sinon.js"></script>
   <!-- Our test -->
@@ -17,25 +17,21 @@
     // checkSpam('buy ViAgRA now') == true
     // checkSpam('free xxxxx') == true
     // checkSpam("innocent rabbit") == false
-    function checkSpan(incomingString) {
+    function checkSpam(incomingString) {
       var string = String(incomingString).toLowerCase();
       // empty string fix
       if(string == "") return false;
 
       for (var i = 0; i < string.length; i++) {
-        if(~string.toLowerCase().indexOf("viagra") || ~string.toLowerCase().indexOf("xxx")) {
 
+        if(~string.toLowerCase().indexOf("viagra") || ~string.toLowerCase().indexOf("xxx")) {
           return true;
           break;
-
         } else {
-
           return false;
-
         }
 
       }
-      //return incomingString.toLowerCase().indexOf(searchKey1 || searchKey2);
     }
   </script>
 </body>
