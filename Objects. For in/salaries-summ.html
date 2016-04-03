@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Salaries summ</title>
+</head>
+<body>
+  <script>
+    "use strict";
+
+    var salaries = {
+      "Вася": 100,
+      "Петя": 300,
+      "Даша": 250
+    };
+
+    var totalSumm = 0;
+
+    for (var key in salaries) {
+      totalSumm += salaries[key];
+    }
+
+    console.log(totalSumm);
+  </script>
+</body>
+</html>

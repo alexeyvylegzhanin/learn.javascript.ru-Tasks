@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Biggest salary</title>
+</head>
+<body>
+  <script>
+    var salaries = {
+      "Вася": 100,
+      "Петя": 300,
+      "Даша": 250
+    };
+
+    function getBiggestSalary(employeesObject) {
+      var maxValue = 0, nameOfEmployee = 0;
+
+      for (var key in employeesObject) {
+        
+        if (maxValue < employeesObject[key]) {
+          maxValue = employeesObject[key];
+          nameOfEmployee = key;
+        } else {
+          continue;
+        }
+      }
+
+      return nameOfEmployee;
+    }
+    // Output:
+    console.log(getBiggestSalary(salaries));
+  </script>
+</body>
+</html>
