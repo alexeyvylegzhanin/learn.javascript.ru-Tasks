@@ -2,10 +2,50 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
+  <title>Function getDecimal()</title>
+  <!-- Mocha, Chai and Sinon libs -->
+  <script src="../Libs/chai-mocha-sinon.js"></script>
+  <!-- Unit tests -->
+  <script src="../Unit-tests/Numbers/ut-decimal-part-of-numbers.js"></script>
 </head>
 <body>
+
   <script>
+    /* Function that return decimal part of number */
+    function getDecimal(num) {
+      return +(num - parseInt(num)).toFixed(10);
+    }
+
+    // Solution via strings
+    function getDecimal2(num) {
+      var string = "" + num;
+      return "0" + string.slice(string.indexOf("."), string.length);
+    }
+
+    // getFibNum() first realization
+    function getFibNum(numIndex) {
+      var a = 1, b = 1;
+      var c = 0;
+
+      if (numIndex === 0) c = 0;
+      if (numIndex === 1 || numIndex === 2) c = 1;
+
+      for (var i = 2; i < numIndex; i++) {
+        c = a + b;
+        a = b;
+        b = c;
+      }
+
+      return c;
+    }
+
+    // getFibNum2() realization with Binet's formula
+    function getFibNumBinet(numIndex) {
+      var GOLDEN_RATIO = (1 + Math.sqrt(5)) / 2;
+
+      return Math.round(Math.pow(GOLDEN_RATIO, numIndex) / Math.sqrt(5));
+    }
+
 
     // Напишите код для генерации случайного значения в диапазоне от 0 до max, не включая max.
     function getRandom1(maxBorderValue) {

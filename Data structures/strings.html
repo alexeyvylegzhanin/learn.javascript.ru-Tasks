@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>First char to upper case</title>
+  <!-- Mocha, Chai and Sinon libs -->
+  <script src="../Libs/chai-mocha-sinon.js"></script>
+  <!-- Our test -->
+  <script src="../Unit-tests/Strings/ut-first-char-to-upper-case.js"></script>
+</head>
+<body>
+  <script>
+    // Напишите функцию ucFirst(str), которая возвращает строку str
+    // с заглавным первым символом, например:
+    // ucFirst("вася") == "Вася";
+    // ucFirst("") == ""; // нет ошибок при пустой строке
+    function ucFirst(incomingString) {
+      // another solution:
+      // if (!str) return str;
+      if ( +incomingString == false || typeof incomingString == "number") return "";
+
+      return incomingString[0].toUpperCase() + (incomingString.slice(1, incomingString.length)).toLowerCase();
+    }
+
+    // Создайте функцию truncate(str, maxlength), которая проверяет длину строки str,
+    // и если она превосходит maxlength – заменяет конец str на "...",
+    // так чтобы ее длина стала равна maxlength.
+    //
+    // Результатом функции должна быть (при необходимости) усечённая строка.
+    //
+    // Например:
+    //
+    // truncate("Вот, что мне хотелось бы сказать на эту тему:", 20) = "Вот, что мне хоте..."
+    //
+    // truncate("Всем привет!", 20) = "Всем привет!"
+    function truncate(incomingString, maxLength) {
+
+      if (incomingString.length > maxLength) {
+        return incomingString.slice(0, maxLength - 3) + "...";
+      } else {
+        reuturn incomingString;
+      }
+
+    }
+
+    // Напишите функцию checkSpam(str), которая возвращает true,
+    // если строка str содержит „viagra“ или „XXX“, а иначе false.
+    // Функция должна быть нечувствительна к регистру:
+    //
+    // checkSpam('buy ViAgRA now') == true
+    // checkSpam('free xxxxx') == true
+    // checkSpam("innocent rabbit") == false
+    function checkSpam(incomingString) {
+      var string = String(incomingString).toLowerCase();
+      // empty string fix
+      if(string == "") return false;
+
+      for (var i = 0; i < string.length; i++) {
+
+        if(~string.toLowerCase().indexOf("viagra") || ~string.toLowerCase().indexOf("xxx")) {
+          return true;
+          break;
+        } else {
+          return false;
+        }
+
+      }
+    }
+
+    // Есть стоимость в виде строки: "$120".
+    // То есть, первым идёт знак валюты, а затем – число.
+    //
+    // Создайте функцию extractCurrencyValue(str),
+    // которая будет из такой строки выделять число-значение, в данном случае 120.
+    // function extractCurrencyValue(incomingString) {
+    //
+    // }
+    function extractCurrencyValue(amoutString) {
+      // another solution
+      // return +str.slice(1);
+      var completeString = "";
+
+      for (var i = 0; i < amoutString.length; i++) {
+
+        if (isNaN(amoutString[i])) {
+          continue;
+        } else {
+          completeString = amoutString.slice(i, amoutString.length);
+          break;
+        }
+
+      }
+
+      return parseFloat(completeString);
+
+    }
+  </script>
+</body>
+</html>
