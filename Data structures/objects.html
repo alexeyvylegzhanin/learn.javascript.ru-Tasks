@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My first Object()</title>
+</head>
+<body>
+  <script>
+    /* Task 1 */
+    // Мини-задача на синтаксис объектов. Напишите код, по строке на каждое действие.
+    //
+    // 1. Создайте пустой объект user.
+    var user = new Object();
+    // 2. Добавьте свойство name со значением Вася.
+    user.name = "Вася";
+    // 3. Добавьте свойство surname со значением Петров.
+    user["surname"] = "Петров";
+    // 4. Поменяйте значение name на Сергей.
+    user.name = "Сергей";
+    // 5. Удалите свойство name из объекта.
+    delete user["name"];
+    /* <--end--> */
+
+    /* Task 2 */
+    // Создайте функцию isEmpty(obj),
+    // которая возвращает true, если в объекте нет свойств
+    // и false – если хоть одно свойство есть.
+    function isEmpty(someObject) {
+      var counter = 0;
+
+      for (key in someObject) {
+        counter++;
+      }
+      // If someObject is empty, return 'true' value
+      if (counter) {
+        return false;
+      } else {
+        return true;
+      }
+
+    }
+    /* <--end--> */
+
+    /* Task 3 */
+    // Есть объект salaries с зарплатами.
+    // Напишите код, который выведет сумму всех зарплат.
+    // Если объект пустой, то результат должен быть 0.
+
+    /* (!)need code here */
+    var salaries = {
+      "Вася": 100,
+      "Петя": 300,
+      "Даша": 250
+    };
+
+    var totalSumm = 0;
+
+    for (var key in salaries) {
+      totalSumm += salaries[key];
+    }
+
+    console.log(totalSumm);
+
+
+    /* <--end--> */
+
+    /* Task 4 */
+    // Есть объект salaries с зарплатами.
+    // Напишите код, который выведет имя сотрудника, у которого самая большая зарплата.
+    // Если объект пустой, то пусть он выводит «нет сотрудников».
+    var salaries = {
+      "Вася": 100,
+      "Петя": 300,
+      "Даша": 250
+    };
+
+    function getBiggestSalary(employeesObject) {
+      var maxValue = 0, nameOfEmployee = 0;
+
+      for (var key in employeesObject) {
+
+        if (maxValue < employeesObject[key]) {
+          maxValue = employeesObject[key];
+          nameOfEmployee = key;
+        } else {
+          continue;
+        }
+      }
+
+      return nameOfEmployee;
+    }
+    /* <--end--> */
+  </script>
+</body>
+</html>

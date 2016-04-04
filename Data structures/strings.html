@@ -6,10 +6,11 @@
   <!-- Mocha, Chai and Sinon libs -->
   <script src="../Libs/chai-mocha-sinon.js"></script>
   <!-- Our test -->
-  <script src="../Unit-tests/Strings/ut-first-char-to-upper-case.js"></script>
+  <script src="../Unit-tests/ut-strings.js"></script>
 </head>
 <body>
   <script>
+    /* Task 1 */
     // Напишите функцию ucFirst(str), которая возвращает строку str
     // с заглавным первым символом, например:
     // ucFirst("вася") == "Вася";
@@ -21,13 +22,13 @@
 
       return incomingString[0].toUpperCase() + (incomingString.slice(1, incomingString.length)).toLowerCase();
     }
+    /* <--end--> */
 
+    /* Task 2 */
     // Создайте функцию truncate(str, maxlength), которая проверяет длину строки str,
     // и если она превосходит maxlength – заменяет конец str на "...",
     // так чтобы ее длина стала равна maxlength.
-    //
     // Результатом функции должна быть (при необходимости) усечённая строка.
-    //
     // Например:
     //
     // truncate("Вот, что мне хотелось бы сказать на эту тему:", 20) = "Вот, что мне хоте..."
@@ -38,11 +39,13 @@
       if (incomingString.length > maxLength) {
         return incomingString.slice(0, maxLength - 3) + "...";
       } else {
-        reuturn incomingString;
+        return incomingString;
       }
 
     }
+    /* <--end--> */
 
+    /* Task 3 */
     // Напишите функцию checkSpam(str), которая возвращает true,
     // если строка str содержит „viagra“ или „XXX“, а иначе false.
     // Функция должна быть нечувствительна к регистру:
@@ -66,15 +69,13 @@
 
       }
     }
+    /* <--end--> */
 
+    /* Task 4 */
     // Есть стоимость в виде строки: "$120".
     // То есть, первым идёт знак валюты, а затем – число.
-    //
     // Создайте функцию extractCurrencyValue(str),
     // которая будет из такой строки выделять число-значение, в данном случае 120.
-    // function extractCurrencyValue(incomingString) {
-    //
-    // }
     function extractCurrencyValue(amoutString) {
       // another solution
       // return +str.slice(1);
@@ -94,6 +95,7 @@
       return parseFloat(completeString);
 
     }
+    /* <--end--> */
   </script>
 </body>
 </html>
